@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         TagPro Checkered Teamtiles
-// @version      1.0
+// @version      1.1
 // @description  Replace the yellow teamtiles by checkered Red and Blue tiles.
 // @author       Ko
 // @include      http://tagpro-*.koalabeast.com:*
@@ -38,6 +38,7 @@ tagpro.ready(function(){
             context.drawImage(source, blue.x, blue.y, 40, 40, 0  + blue_first*20, 20, 20 + blue_first*20, 40);
             context.drawImage(source, red.x,  red.y,  40, 40, 20 - blue_first*20, 20, 40 - blue_first*20, 40);
             PIXI.utils.TextureCache[tile_code] = PIXI.Texture.fromCanvas(canvas);
+            ctt_cached = true;
             return PIXI.utils.TextureCache[tile_code];
         }
     };
